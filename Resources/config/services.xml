@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter
+            key="irontec.json_exception_response_listener.class">Irontec\JsonExceptionResponseBundle\EventListener\JsonExceptionResponseListener
+        </parameter>
+    </parameters>
+
+    <services>
+        <service id="irontec.json_exception_response_listener" class="%irontec.json_exception_response_listener.class%">
+            <argument>%kernel.environment%</argument>
+            <argument type="service" id="translator" />
+            <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" priority="250" />
+        </service>
+    </services>
+</container>

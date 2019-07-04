@@ -1,0 +1,26 @@
+{
+    "name": "irontec/json-exception-response-bundle",
+    "description": "Treat exceptions in JSON",
+    "keywords": ["symfony", "json-exception", "bundle"],
+    "homepage": "https://www.irontec.com",
+    "license": "EUPL-1.1",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Irontec\\JsonExceptionResponseBundle\\" : ""
+        }
+    },
+    "authors" : [{
+            "name" : "Irontec",
+            "email" : "info@irontec.com",
+            "homepage" : "https://www.irontec.com"
+        }, {
+            "name" : "Daniel Rendon",
+            "homepage" : "https://github.com/ddniel16"
+        }
+    ],
+    "require" : {
+        "symfony/http-kernel": "v4.*",
+        "symfony/translation": "v4.*"
+    }
+}
