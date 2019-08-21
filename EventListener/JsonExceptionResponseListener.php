@@ -46,12 +46,19 @@ class JsonExceptionResponseListener
         }
 
         $exception = $event->getException();
-        $code = $this->getCode($exception->getCode());
+
+        if (method_exists($exception, 'getStatusCode')) {
+            $code = $this->getCode($exception->getStatusCode());
+            $message = Response::$statusTexts[$code];
+        } else {
+            $code = $this->getCode($exception->getCode());
+            $message = $this->getMessage($exception->getMessage(), $code);
+        }
 
         $responseData = array(
             'error' => array(
                 'code' => $code,
-                'message' => $this->getMessage($exception->getMessage(), $code)
+                'message' => $this->getMessage($message, $code)
             )
         );
 
