@@ -20,7 +20,7 @@
         }
     ],
     "require" : {
-        "symfony/http-kernel": "v4.*",
-        "symfony/translation": "v4.*"
+        "symfony/http-kernel": "v5.*",
+        "symfony/translation": "v5.*"
     }
 }
