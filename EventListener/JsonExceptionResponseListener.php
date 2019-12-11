@@ -45,7 +45,7 @@ class JsonExceptionResponseListener
             return;
         }
 
-        $exception = $event->getException();
+        $exception = $event->getThrowable();
 
         if (method_exists($exception, 'getStatusCode')) {
             $code = $this->getCode($exception->getStatusCode());
